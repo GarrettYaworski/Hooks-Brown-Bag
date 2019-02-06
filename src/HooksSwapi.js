@@ -6,18 +6,18 @@ const HooksSwapi = () => {
 //Hooks useState Syntax: const [state, setState] = useState(initialValue)
 const [chars, setChars] = useState([]);
 
+
 const getChars = async () => {
   let characters = await axios('/api/characters')
   console.log(characters.data.results)
   setChars(characters.data.results)
 }
 
+
 //useEffect will run with any update to component by default. 
 //pass in empty array to have it behave like componentDidMount.
 //pass in your state to have it run any time there is a change to your state
-useEffect(() => {
-  getChars()
-}, []);
+useEffect(getChars, []);
 
 return(
   <div>
