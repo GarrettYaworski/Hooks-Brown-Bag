@@ -9,10 +9,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <HooksCounter/>
-        <HooksSwapi/>
-        {/* <Counter/>
-        <Swapi/> */}
+        {/* <HooksCounter/>
+        <HooksSwapi/> */}
+        <Counter/>
+        <Swapi/>
       </div>
     );
   }
