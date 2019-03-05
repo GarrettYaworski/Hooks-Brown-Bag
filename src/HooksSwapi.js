@@ -14,7 +14,6 @@ const getChars = async () => {
 }
 
 
-//useEffect will run with any update to component by default. 
 //pass in empty array to have it behave like componentDidMount.
 //pass in your state to have it run any time there is a change to your state
 useEffect(getChars, []);
