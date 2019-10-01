@@ -1,34 +1,38 @@
 import React, { Component } from 'react';
+import { TimelineLite } from 'gsap/TimelineLite'
 import axios from 'axios'
+import './App.css';
+const elementsArray = [{name: "garrett", id: 0}, {name: 'sam', id: 1}, {name: 'Norman', id: 2}]
+
 
 class Swapi extends Component {
-  constructor(){
-    super()
-    this.state = {
-      characters: []
-    }
+  constructor(props){
+    super(props);
+    this.myTween = new TimelineLite({paused: true});
+    this.myElements = [];
   }
-
-  async componentDidMount(){
-    try {
-      let chars = await axios('/api/characters')
-      this.setState({characters: chars.data.results})
-    } catch (error) {
-      console.log('Error grabbing chars')
-    }
+  
+  componentDidMount(){
+    this.myTween.staggerTo(this.myElements, 0.5, {y: 0, autoAlpha: 1}, 2);
+    setInterval(() => { 
+      console.log('hit')
+      this.myTween.restart()}
+      , 5000)
   }
-  render() {
-    return (
-      <div className="Swapi">
-        {this.state.characters.map((char, i) =>{ 
-          return(
-          <h1 key={i}>
-            {char.name}
-          </h1>)
-        })}
-      </div>
-    );
+  
+  render(){
+    return <div>
+      <ul>
+        {elementsArray.map((element, index) => <li
+          key={element.id}
+          ref={li => this.myElements[index] = li}
+        >
+          {element.name}
+        </li>)}
+      </ul>
+    </div>;
   }
 }
 
 export default Swapi;
+
