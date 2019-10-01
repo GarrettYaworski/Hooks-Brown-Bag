@@ -9,6 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>WITH CLASSES</h1>
         <Counter/>
         <Swapi/>
         <h1>WITH HOOKS</h1>
