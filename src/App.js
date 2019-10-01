@@ -10,9 +10,10 @@ class App extends Component {
     return (
       <div className="App">
         <Counter/>
+        <Swapi/>
+        <h1>WITH HOOKS</h1>
         <HooksSwapi/>
         <HooksCounter/>
-        <Swapi/>
       </div>
     );
   }
