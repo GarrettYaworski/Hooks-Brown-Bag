@@ -9,7 +9,7 @@ const HooksSwapi = () => {
     let characters = await Axios('/api/characters')
     setChars(characters.data.results)
   }
-
+  
   useEffect(getChars, [])
 
   return(
@@ -22,6 +22,3 @@ const HooksSwapi = () => {
     </div>
   )
 }
-
-export default HooksSwapi;
-
