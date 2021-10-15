@@ -15,7 +15,6 @@ class App extends Component {
         <h1>WITH HOOKS</h1>
         <HooksSwapi/>
         <HooksCounter/>
-        
       </div>
     );
   }
