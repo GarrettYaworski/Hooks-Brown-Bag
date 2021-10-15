@@ -12,7 +12,7 @@ class App extends Component {
         <h1>WITH CLASSES</h1>
         <Counter/>
         <Swapi/>
-        <h1>WITH HOOKS</h1>
+        <h1>WITH HOOKS!</h1>
         
         <HooksSwapi/>
         <HooksCounter/>
